@@ -3,218 +3,1359 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navaneeth Vishnu | Developer</title>
-  <meta name="description" content="Official portfolio website of Navaneeth Vishnu - MERN Stack Developer and Founder of Backwater Holidays." />
-  <meta name="google-site-verification" content="43xjwmx9TerCVDXF9p_0Q9KO5csCRIYX6Q6CsAk-I5o" />
+  <title>Navaneeth Vishnu — Founder, Backwater Holidays | Kerala</title>
+  <meta name="description" content="Navaneeth Vishnu is a Kerala-based founder and developer from Kainakary, Alleppey. He built Backwater Holidays — a verified houseboat booking platform rooted in real local experience of the Kerala backwaters." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://navaneethvishnu.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Navaneeth Vishnu — Founder, Backwater Holidays" />
+  <meta property="og:description" content="Kerala-based founder and developer. Built Backwater Holidays to fix how travelers discover and book authentic houseboat experiences in Alleppey." />
+  <meta property="og:url" content="https://navaneethvishnu.github.io/" />
+  <meta property="og:site_name" content="Navaneeth Vishnu" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Navaneeth Vishnu — Kerala Founder & Developer" />
+  <meta name="twitter:description" content="Founder of Backwater Holidays. Building transparent, local-first travel tech from the backwaters of Alleppey, Kerala." />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://navaneethvishnu.github.io/#person",
+        "name": "Navaneeth Vishnu",
+        "url": "https://navaneethvishnu.github.io/",
+        "jobTitle": "Founder & Developer",
+        "description": "Kerala-based founder and full-stack developer who built Backwater Holidays, a verified houseboat booking platform for Alleppey and the Kerala backwaters.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kainakary",
+          "addressRegion": "Alleppey",
+          "addressCountry": "IN"
+        },
+        "knowsAbout": ["Kerala tourism", "backwater travel", "houseboat booking", "web development", "travel technology", "Alleppey", "Kerala startup"],
+        "sameAs": ["https://www.backwaterholidays.in"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.backwaterholidays.in/#organization",
+        "name": "Backwater Holidays",
+        "url": "https://www.backwaterholidays.in",
+        "founder": { "@id": "https://navaneethvishnu.github.io/#person" },
+        "description": "A Kerala houseboat booking platform connecting travelers with verified local operators across the Alleppey backwaters.",
+        "areaServed": "Kerala, India",
+        "knowsAbout": ["Kerala backwaters", "Alleppey houseboats", "Kerala tourism"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navaneethvishnu.github.io/#website",
+        "url": "https://navaneethvishnu.github.io/",
+        "name": "Navaneeth Vishnu",
+        "description": "Personal founder site of Navaneeth Vishnu, builder of Backwater Holidays.",
+        "publisher": { "@id": "https://navaneethvishnu.github.io/#person" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://navaneethvishnu.github.io/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f0e8;
+      --cream-dark: #ede7d8;
+      --ink: #1a1612;
+      --ink-soft: #3d352c;
+      --ink-muted: #7a6f63;
+      --teal: #2d6e6e;
+      --teal-light: #4a9090;
+      --teal-faint: #e8f0f0;
+      --gold: #b89a5a;
+      --gold-light: #d4b87a;
+      --rust: #8b4a2f;
+      --white: #fefefe;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-italic: 'Playfair Display', Georgia, serif;
+
+      --section-pad: clamp(5rem, 10vw, 9rem);
+      --max-w: 1140px;
+      --text-max: 680px;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background: #0f172a;
-      color: #ffffff;
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: clamp(15px, 1.1vw, 17px);
+      overflow-x: hidden;
     }
 
-    header {
-      min-height: 100vh;
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.6;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: var(--teal);
+      z-index: 1000;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(245, 240, 232, 0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(45, 110, 110, 0.12);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      justify-content: flex-end;
+      padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem);
+      position: relative;
+      overflow: hidden;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
 
-    .highlight {
-      color: #38bdf8;
+    /* Subtle water-ripple SVG background */
+    .hero-bg svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.07;
     }
 
-    p {
-      max-width: 700px;
-      font-size: 1.1rem;
-      color: #cbd5e1;
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
     }
 
-    .buttons {
-      margin-top: 30px;
+    h1.hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
+    }
+
+    h1.hero-title em {
+      font-style: italic;
+      color: var(--teal);
+      font-family: var(--font-italic);
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      max-width: 520px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.75s forwards;
+    }
+
+    .hero-ctas {
+      margin-top: 3rem;
       display: flex;
-      gap: 15px;
+      gap: 1.25rem;
       flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s forwards;
     }
 
     .btn-primary {
-      background: #38bdf8;
-      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--ink-muted);
+      color: var(--ink-soft);
+      padding: 0.85rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: clamp(2rem, 4vw, 3rem);
+      right: clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeIn 1s 1.4s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      writing-mode: vertical-rl;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--teal), transparent);
+      animation: scrollPulse 2s infinite;
     }
 
-    .btn-primary:hover {
-      background: #0ea5e9;
+    /* ── DIVIDER ── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--teal);
+      margin: 2rem 0;
+    }
+    .divider.center { margin: 2rem auto; }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1.2rem;
     }
 
-    .btn-secondary {
-      border: 2px solid #38bdf8;
-      color: #38bdf8;
+    /* ── ABOUT ── */
+    #about {
+      padding: var(--section-pad) 0;
+      background: var(--white);
     }
 
-    .btn-secondary:hover {
-      background: #38bdf8;
-      color: #0f172a;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #38bdf8;
-      text-align: center;
-    }
-
-    .cards {
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #020617;
-      color: #94a3b8;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
     }
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+      .about-grid { grid-template-columns: 1fr; }
     }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    h2.section-title em {
+      font-style: italic;
+      color: var(--teal);
+      font-family: var(--font-italic);
+    }
+
+    .body-text {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .body-text a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--teal-faint);
+      transition: border-color 0.2s;
+    }
+    .body-text a:hover { border-color: var(--teal); }
+
+    .about-photo {
+      position: relative;
+    }
+    .about-photo-inner {
+      aspect-ratio: 3/4;
+      background: var(--cream-dark);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Kerala water illustration placeholder */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #c8dcd8 0%, #a8c4b8 40%, #7aab99 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-placeholder::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(45,110,110,0.3), transparent);
+    }
+
+    /* water ripple SVG in photo */
+    .photo-placeholder svg {
+      width: 80%;
+      opacity: 0.25;
+    }
+
+    .photo-caption {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+    }
+    .photo-deco {
+      position: absolute;
+      top: -1.5rem;
+      right: -1.5rem;
+      width: 80px;
+      height: 80px;
+      border: 1px solid var(--teal);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    /* ── QUOTE BLOCK ── */
+    .pull-quote {
+      padding: 2.5rem 0 2.5rem 2rem;
+      border-left: 2px solid var(--teal);
+      margin: 2.5rem 0;
+    }
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      font-style: normal;
+    }
+
+    /* ── STARTUP ── */
+    #startup {
+      padding: var(--section-pad) 0;
+      background: var(--cream);
+    }
+
+    .startup-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .startup-grid { grid-template-columns: 1fr; }
+    }
+
+    .startup-meta {
+      position: sticky;
+      top: 8rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid currentColor;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .startup-link-block {
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: var(--teal-faint);
+      border-left: 3px solid var(--teal);
+    }
+    .startup-link-block p {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .startup-link-block a {
+      color: var(--teal);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--teal);
+    }
+
+    /* ── STAT ROW ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 3rem 0;
+      background: var(--cream-dark);
+    }
+    @media (max-width: 560px) {
+      .stat-row { grid-template-columns: 1fr; }
+    }
+
+    .stat-item {
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ── DEVELOPER ── */
+    #developer {
+      padding: var(--section-pad) 0;
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    #developer .section-label { color: var(--gold-light); }
+
+    #developer h2.section-title { color: var(--cream); }
+    #developer h2.section-title em { color: var(--gold-light); }
+
+    #developer .body-text {
+      color: rgba(245,240,232,0.7);
+    }
+
+    #developer .body-text a {
+      color: var(--gold-light);
+      border-bottom-color: rgba(212,184,122,0.3);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1px;
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .skill-card {
+      background: var(--ink);
+      padding: 2rem 1.75rem;
+      border-top: 2px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .skill-card:hover {
+      border-top-color: var(--teal-light);
+      background: rgba(45,110,110,0.08);
+    }
+    .skill-card-icon {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+    .skill-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .skill-card p {
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.5);
+      line-height: 1.7;
+    }
+
+    /* ── GUIDES ── */
+    #guides {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+
+    .guides-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .guide-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .guide-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .guide-card:hover { transform: translateY(-4px); }
+
+    .guide-card-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: linear-gradient(135deg, #b8d4cc, #7aab99, #4a9090);
+      position: relative;
+    }
+    .guide-card-img svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .guide-card-body {
+      padding: 1.5rem;
+    }
+
+    .guide-meta {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.75rem;
+    }
+    .guide-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+    .guide-card p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+
+    .guide-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .guide-card-link:hover { border-color: var(--teal); }
+
+    .guide-card-link svg {
+      width: 14px;
+      transition: transform 0.2s;
+    }
+    .guide-card:hover .guide-card-link svg { transform: translateX(3px); }
+
+    /* ── WHY ── */
+    #why {
+      padding: var(--section-pad) 0;
+      background: var(--cream-dark);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    .why-items {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .why-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--teal);
+      font-weight: 300;
+      padding-top: 0.1rem;
+    }
+    .why-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .why-item p {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: clamp(6rem, 10vw, 9rem) 0;
+      background: var(--ink);
+      text-align: center;
+    }
+
+    #contact .section-label { color: var(--gold-light); }
+
+    #contact h2.section-title {
+      color: var(--cream);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #contact h2.section-title em { color: var(--gold-light); }
+
+    .contact-sub {
+      margin-top: 1.5rem;
+      color: rgba(245,240,232,0.6);
+      font-size: 1rem;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-ctas {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.85rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.25s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    .btn-ghost-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(245,240,232,0.3);
+      color: rgba(245,240,232,0.7);
+      padding: 0.85rem 2rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-ghost-light:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #110e0a;
+      padding: 3rem 0 2rem;
+      color: rgba(245,240,232,0.4);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.8);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .footer-location {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.4);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--teal-light); }
+
+    .footer-copy {
+      width: 100%;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 2rem;
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy a {
+      color: rgba(245,240,232,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-copy a:hover { color: var(--teal-light); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.6); opacity: 0.4; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── WATER DECO LINE ── */
+    .water-deco {
+      display: block;
+      width: 100%;
+      height: 60px;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .water-deco svg { display: block; }
+
+    /* ── SELECTION ── */
+    ::selection { background: var(--teal); color: var(--white); }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Hello, I'm <span class="highlight">Navaneeth Vishnu</span></h1>
-    <p>
-      MERN Stack Developer, SEO Enthusiast, and Founder of Backwater Holidays.
-      Passionate about building modern web applications, travel platforms,
-      and digital experiences.
+  <div id="progress" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- NAV -->
+  <nav id="nav" aria-label="Main navigation">
+    <a class="nav-logo" href="/" aria-label="Navaneeth Vishnu homepage">NV</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#startup">Backwater Holidays</a></li>
+      <li><a href="#developer">Work</a></li>
+      <li><a href="#guides">Guides</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Gentle water ripple lines -->
+        <g fill="none" stroke="#2d6e6e" stroke-width="1.5">
+          <path d="M0 400 Q300 360 600 400 Q900 440 1200 400" opacity="0.6"/>
+          <path d="M0 440 Q300 400 600 440 Q900 480 1200 440" opacity="0.5"/>
+          <path d="M0 480 Q300 440 600 480 Q900 520 1200 480" opacity="0.4"/>
+          <path d="M0 520 Q300 480 600 520 Q900 560 1200 520" opacity="0.3"/>
+          <path d="M0 360 Q300 320 600 360 Q900 400 1200 360" opacity="0.5"/>
+          <path d="M0 320 Q300 280 600 320 Q900 360 1200 320" opacity="0.4"/>
+          <path d="M0 560 Q300 520 600 560 Q900 600 1200 560" opacity="0.25"/>
+          <path d="M0 600 Q300 560 600 600 Q900 640 1200 600" opacity="0.15"/>
+        </g>
+        <!-- Boat silhouette sketch -->
+        <g fill="#2d6e6e" opacity="0.08">
+          <path d="M850 390 L900 390 L910 410 L840 410 Z"/>
+          <rect x="870" y="360" width="2" height="32"/>
+          <path d="M872 360 L900 375 L872 375 Z"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="hero-eyebrow">Kainakary, Alleppey · Kerala, India</p>
+
+    <h1 class="hero-title">
+      Navaneeth<br />
+      <em>Vishnu</em>
+    </h1>
+
+    <p class="hero-sub">
+      Founder of <a href="https://www.backwaterholidays.in" style="color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal);">Backwater Holidays</a>. 
+      Full-stack developer and local entrepreneur building honest travel infrastructure from the backwaters of Kerala.
     </p>
 
-    <div class="buttons">
-      <a href="https://www.backwaterholidays.in" class="btn btn-primary" target="_blank">Visit Backwater Holidays</a>
-      <a href="https://github.com/navaneethvishnu" class="btn btn-secondary" target="_blank">GitHub Profile</a>
+    <div class="hero-ctas">
+      <a href="https://www.backwaterholidays.in" class="btn-primary" target="_blank" rel="noopener">
+        Backwater Holidays ↗
+      </a>
+      <a href="#about" class="btn-ghost">The Story</a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
     </div>
   </header>
 
-  <section>
-    <h2 class="section-title">About Me</h2>
-    <p style="text-align:center; margin:auto;">
-      I am a web developer from Kerala, India, currently focusing on MERN stack development,
-      SEO optimization, and travel-tech platforms. I enjoy creating scalable websites,
-      improving search rankings, and building useful online services.
-    </p>
-  </section>
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
 
-  <section>
-    <h2 class="section-title">Projects</h2>
+        <div class="about-photo reveal">
+          <div class="about-photo-inner">
+            <div class="photo-placeholder" role="img" aria-label="Navaneeth Vishnu, founder from Kainakary, Kerala">
+              <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Kerala backwater illustration -->
+                <g fill="none" stroke="white" stroke-width="1.2">
+                  <path d="M50 280 Q150 250 250 280"/>
+                  <path d="M40 300 Q150 270 260 300"/>
+                  <path d="M60 320 Q150 295 240 320"/>
+                  <path d="M70 340 Q150 315 230 340"/>
+                  <!-- Palm tree left -->
+                  <line x1="80" y1="280" x2="80" y2="180" stroke-width="2"/>
+                  <path d="M80 180 Q60 155 40 165 Q65 162 80 180"/>
+                  <path d="M80 190 Q55 175 45 190 Q65 178 80 190"/>
+                  <path d="M80 180 Q100 155 120 165 Q95 162 80 180"/>
+                  <path d="M80 190 Q105 175 115 190 Q95 178 80 190"/>
+                  <!-- Boat -->
+                  <path d="M120 275 L180 275 L190 290 L110 290 Z"/>
+                  <line x1="150" y1="245" x2="150" y2="276"/>
+                  <path d="M150 245 L175 260 L150 260 Z"/>
+                  <!-- Ripple circles -->
+                  <circle cx="200" cy="310" r="15" opacity="0.4"/>
+                  <circle cx="200" cy="310" r="25" opacity="0.25"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <p class="photo-caption">Kainakary, Alleppey District · The backwaters at dusk</p>
+          <div class="photo-deco" aria-hidden="true"></div>
+        </div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Backwater Holidays</h3>
-        <p>
-          A Kerala houseboat booking platform focused on premium travel experiences,
-          SEO optimization, and direct online bookings.
-        </p>
-      </div>
+        <div class="about-content">
+          <p class="section-label reveal">About</p>
+          <h2 class="section-title reveal reveal-delay-1" id="about-heading">
+            Born in the <em>backwaters.</em><br />
+            Building for them.
+          </h2>
 
-      <div class="card">
-        <h3>Houseboat Booking System</h3>
-        <p>
-          Developing a modern booking app and website for houseboats with real-time
-          enquiry and customer management features.
-        </p>
-      </div>
+          <div class="divider reveal reveal-delay-2"></div>
 
-      <div class="card">
-        <h3>SEO Content Optimization</h3>
-        <p>
-          Working on high-ranking SEO blog pages and technical optimization strategies
-          for competitive travel keywords.
-        </p>
+          <p class="body-text reveal reveal-delay-2">
+            I grew up in Kainakary — a small island village in Alleppey district, surrounded entirely by water. The backwaters were not a tourist attraction for me. They were where I swam as a child, where my family fished, where neighbours moved between houses by boat on monsoon mornings.
+          </p>
+
+          <p class="body-text reveal reveal-delay-2">
+            That upbringing gave me something no travel guide can manufacture: a genuine understanding of how the <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">Kerala backwaters</a> actually work — which operators are honest, which routes are genuinely beautiful, and what a traveller really needs versus what they are often sold.
+          </p>
+
+          <p class="body-text reveal reveal-delay-2">
+            I taught myself to code as a teenager, drawn equally to both worlds: the water outside and the screen inside. Over time, I realised the two could be unified. The gap between how Kerala's houseboat tourism actually operates and how it is presented online to travellers is enormous. I wanted to close it.
+          </p>
+
+          <div class="pull-quote reveal reveal-delay-3">
+            <p>"There is a version of Alleppey that belongs to brochures. And then there is the real one — quieter, more beautiful, harder to find."</p>
+            <cite>— Navaneeth Vishnu</cite>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section>
-    <h2 class="section-title">Skills</h2>
+  <!-- STARTUP -->
+  <section id="startup" aria-labelledby="startup-heading">
+    <div class="container">
+      <div class="startup-grid">
 
-    <div class="cards">
-      <div class="card">
-        <h3>Frontend</h3>
-        <p>HTML, CSS, JavaScript, React 19, Next.js</p>
-      </div>
+        <div class="startup-meta reveal">
+          <p class="section-label">The Project</p>
+          <h2 class="section-title" id="startup-heading">
+            Backwater<br /><em>Holidays</em>
+          </h2>
+          <div class="divider"></div>
+          <p class="body-text" style="font-size:0.9rem;">
+            A verified booking platform for Kerala houseboats. Built from the ground up to solve a real problem I watched unfold every season.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Kerala Tourism</span>
+            <span class="tag">Houseboat Booking</span>
+            <span class="tag">Alleppey</span>
+            <span class="tag">Travel Tech</span>
+          </div>
+          <div class="startup-link-block">
+            <p>Visit the platform: <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">backwaterholidays.in</a> — Kerala's local-first houseboat booking experience.</p>
+          </div>
+        </div>
 
-      <div class="card">
-        <h3>Backend</h3>
-        <p>Node.js, Express.js, MongoDB</p>
-      </div>
+        <div class="startup-content">
+          <p class="body-text reveal">
+            Every season I watched travellers arrive in Alleppey clutching printouts from booking aggregators, expecting one houseboat and getting another. I watched commissions swallow operators. I watched pricing games play out at the jetty. The Kerala houseboat market, rich and beautiful as it is, had a transparency problem.
+          </p>
+          <p class="body-text reveal reveal-delay-1">
+            In 2022 I started building <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">Backwater Holidays</a> — not as a startup idea pulled from a pitch deck, but as an answer to something I lived around. The goal was straightforward: let travellers book directly with local, verified operators across the Alleppey backwaters, with honest pricing, real photographs, and no intermediary markup eroding the experience at both ends.
+          </p>
 
-      <div class="card">
-        <h3>Other Skills</h3>
-        <p>SEO, GitHub Pages, Digital Marketing, UI Design</p>
+          <div class="stat-row reveal reveal-delay-1">
+            <div class="stat-item">
+              <div class="stat-number">900<span style="font-size:1.2rem">km²</span></div>
+              <div class="stat-label">Kerala backwater network</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">~1200</div>
+              <div class="stat-label">Licensed houseboats in Alleppey</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">Local</div>
+              <div class="stat-label">Operator verified, always</div>
+            </div>
+          </div>
+
+          <p class="body-text reveal reveal-delay-2">
+            The platform handles search, real-time availability, route customisation — overnight cruises through Punnamada Lake, dawn departures from Kumarakom, private charters into the inner canal villages — and supports operators in managing their bookings without being swallowed by platform fees they can't sustain.
+          </p>
+          <p class="body-text reveal reveal-delay-2">
+            <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">Backwater Holidays</a> is built by someone from here, for travellers who want to actually experience Kerala rather than a packaged simulation of it.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- DEVELOPER -->
+  <section id="developer" aria-labelledby="developer-heading">
+    <div class="container">
+      <div style="max-width: var(--text-max);">
+        <p class="section-label reveal">Craft</p>
+        <h2 class="section-title reveal reveal-delay-1" id="developer-heading">
+          Building with<br /><em>intention.</em>
+        </h2>
+        <div class="divider reveal reveal-delay-2" style="background: var(--gold);"></div>
+        <p class="body-text reveal reveal-delay-2">
+          I write code the same way I think about travel: starting with the real experience, working backwards to what actually serves it. I specialise in full-stack web development, booking and reservation systems, search architecture, and the intersection of SEO and development — where technical decisions upstream determine whether a business is discoverable at all.
+        </p>
+        <p class="body-text reveal reveal-delay-2">
+          Most of what I have learned came not from a classroom but from building something live, watching it break, and fixing it with better understanding each time.
+        </p>
+      </div>
+
+      <div class="skills-grid reveal reveal-delay-2">
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">⌘</div>
+          <h3>Full-Stack Development</h3>
+          <p>End-to-end systems: frontend, backend, database architecture, and API design built for real traffic and real use.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">◈</div>
+          <h3>Booking Systems</h3>
+          <p>Real-time availability, calendar logic, operator onboarding, and payment flows built for the complexities of travel inventory.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">◎</div>
+          <h3>Search & SEO Architecture</h3>
+          <p>Semantic markup, entity optimisation, and technical SEO baked into the build process — not bolted on afterwards.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">◇</div>
+          <h3>Travel Technology</h3>
+          <p>Platform design for local tourism operators — building digital infrastructure that matches how small tourism businesses actually work.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">△</div>
+          <h3>Performance & Speed</h3>
+          <p>Lightweight, fast-loading interfaces optimised for mobile-first users on variable connectivity — essential for real users in real contexts.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon" aria-hidden="true">○</div>
+          <h3>Startup Building</h3>
+          <p>From concept to live product — product thinking, operator relations, user research, and iterative launch on constrained resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES -->
+  <section id="guides" aria-labelledby="guides-heading">
+    <div class="container">
+      <div class="guides-header">
+        <div>
+          <p class="section-label reveal">Local Knowledge</p>
+          <h2 class="section-title reveal reveal-delay-1" id="guides-heading">
+            Selected <em>guides</em>
+          </h2>
+        </div>
+        <p class="body-text reveal" style="max-width:320px;font-size:0.88rem;">
+          A few pieces written from real experience — not for SEO, but because the information genuinely needed to exist somewhere honest.
+        </p>
+      </div>
+
+      <div class="guide-cards">
+
+        <article class="guide-card reveal" aria-labelledby="guide1-title">
+          <div class="guide-card-img" aria-hidden="true">
+            <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="white" stroke-width="1">
+                <path d="M0 120 Q80 100 160 120 Q240 140 320 120"/>
+                <path d="M0 140 Q80 120 160 140 Q240 160 320 140"/>
+                <path d="M0 160 Q80 145 160 160 Q240 175 320 160"/>
+                <path d="M150 120 L160 60 L170 120" fill="rgba(255,255,255,0.1)"/>
+                <path d="M160 60 L195 85 L160 85 Z" fill="rgba(255,255,255,0.2)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-meta">Alleppey · Travel Planning</p>
+            <h3 id="guide1-title">How to book an Alleppey houseboat without being overcharged</h3>
+            <p>The real pricing structure, what to expect on the water, and which operators consistently deliver on what they promise.</p>
+            <a href="https://www.backwaterholidays.in" class="guide-card-link" target="_blank" rel="noopener" aria-label="Read houseboat booking guide on Backwater Holidays">
+              Read on Backwater Holidays
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="guide-card reveal reveal-delay-1" aria-labelledby="guide2-title">
+          <div class="guide-card-img" style="background: linear-gradient(135deg, #8fbbaa, #5a9080, #3d7065);" aria-hidden="true">
+            <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="white" stroke-width="1" opacity="0.5">
+                <circle cx="160" cy="100" r="60"/>
+                <circle cx="160" cy="100" r="40"/>
+                <path d="M100 100 L220 100"/>
+                <path d="M160 40 L160 160"/>
+              </g>
+            </svg>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-meta">Kainakary · Hidden Kerala</p>
+            <h3 id="guide2-title">Kainakary: the backwater village most travellers never reach</h3>
+            <p>My home — and one of the most genuinely beautiful places in Kerala. How to get there, and why it belongs on your route.</p>
+            <a href="https://www.backwaterholidays.in" class="guide-card-link" target="_blank" rel="noopener" aria-label="Read Kainakary village guide on Backwater Holidays">
+              Read on Backwater Holidays
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="guide-card reveal reveal-delay-2" aria-labelledby="guide3-title">
+          <div class="guide-card-img" style="background: linear-gradient(135deg, #a8c4aa, #6d9e78, #4a7a55);" aria-hidden="true">
+            <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+              <g fill="white" opacity="0.15">
+                <path d="M60 160 Q80 110 100 80 Q110 65 120 80 Q140 110 160 140"/>
+                <path d="M200 160 Q215 120 230 95 Q240 80 250 95 Q265 120 280 160"/>
+              </g>
+              <g fill="none" stroke="white" stroke-width="1" opacity="0.4">
+                <path d="M0 150 Q80 130 160 150 Q240 170 320 150"/>
+                <path d="M0 170 Q80 155 160 170 Q240 185 320 170"/>
+              </g>
+            </svg>
+          </div>
+          <div class="guide-card-body">
+            <p class="guide-meta">Kerala · Season Guide</p>
+            <h3 id="guide3-title">Best time to visit the Kerala backwaters: an honest, month-by-month account</h3>
+            <p>Not the generic monsoon-is-romantic advice. What each season actually feels like, and who each season actually suits.</p>
+            <a href="https://www.backwaterholidays.in" class="guide-card-link" target="_blank" rel="noopener" aria-label="Read Kerala backwater season guide on Backwater Holidays">
+              Read on Backwater Holidays
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-grid">
+
+        <div class="reveal">
+          <p class="section-label">Purpose</p>
+          <h2 class="section-title" id="why-heading">
+            Why this<br /><em>site exists</em>
+          </h2>
+          <div class="divider"></div>
+          <p class="body-text" style="font-size:0.9rem;color:var(--ink-muted);">
+            Personal founder sites should do one thing well: make it clear who you are and why your work matters.
+          </p>
+        </div>
+
+        <div class="why-items">
+          <div class="why-item reveal">
+            <span class="why-num">01</span>
+            <div>
+              <h3>Honest information exists</h3>
+              <p>Most travel content about the Kerala backwaters is written at a distance or written to rank. Someone who grew up on these waters needs to make the accurate version available too.</p>
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <span class="why-num">02</span>
+            <div>
+              <h3>Local founders deserve a voice</h3>
+              <p>Technology built for a place by someone from that place is different in quality. It accounts for context that outsiders building from data alone cannot see. I want that perspective to be legible.</p>
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <span class="why-num">03</span>
+            <div>
+              <h3>Travellers deserve direct access</h3>
+              <p>When a traveller books through <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal);">Backwater Holidays</a>, they are booking directly with a Kerala operator I have personally verified. That relationship should not be buried three aggregator layers deep.</p>
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-3">
+            <span class="why-num">04</span>
+            <div>
+              <h3>Kerala tourism deserves better infrastructure</h3>
+              <p>The backwaters are one of the most extraordinary places in the world. The digital infrastructure that represents them to global travellers should be worthy of that.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <p class="section-label reveal">Get in touch</p>
+      <h2 class="section-title reveal reveal-delay-1" id="contact-heading">
+        Working on something <em>real?</em>
+      </h2>
+      <p class="contact-sub reveal reveal-delay-2">
+        If you are building in travel, working on Kerala tourism, or have a project that needs someone who builds with genuine local context — reach out.
+      </p>
+      <div class="contact-ctas reveal reveal-delay-2">
+        <a href="https://www.backwaterholidays.in" class="btn-gold" target="_blank" rel="noopener">Visit Backwater Holidays</a>
+        <a href="mailto:hello@navaneethvishnu.github.io" class="btn-ghost-light">Send a message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Navaneeth Vishnu. All Rights Reserved.</p>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">Navaneeth Vishnu</p>
+          <p class="footer-location">Kainakary, Alleppey · Kerala, India</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#startup">Backwater Holidays</a>
+          <a href="#developer">Work</a>
+          <a href="#guides">Guides</a>
+          <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">backwaterholidays.in ↗</a>
+        </nav>
+      </div>
+      <div class="footer-copy">
+        <span>© 2026 Navaneeth Vishnu · Kainakary, Kerala</span>
+        <span>Built from the backwaters. <a href="https://www.backwaterholidays.in" target="_blank" rel="noopener">Backwater Holidays</a></span>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (scrollTop / docHeight * 100) + '%';
+
+      nav.classList.toggle('scrolled', scrollTop > 60);
+    }, { passive: true });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
+
