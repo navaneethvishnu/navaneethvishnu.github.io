@@ -558,8 +558,12 @@
 
     .guides-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .guides-grid { grid-template-columns: 1fr; }
     }
 
     .guide-card {
@@ -1137,9 +1141,21 @@
           </div>
         </a>
 
-        <a href="https://www.backwaterholidays.in/blog" class="guide-card reveal reveal-delay-3" rel="noopener" target="_blank" aria-label="Kerala Backwater Blog">
+        <a href="https://navaneethvishnu.github.io/alleppey-houseboat-guide/" class="guide-card reveal reveal-delay-3" rel="noopener" target="_blank" aria-label="Alleppey Houseboat Booking Guide by Navaneeth Vishnu">
           <div class="guide-card-top">
             <div class="guide-number">03</div>
+            <div class="guide-topic">Complete booking guide</div>
+          </div>
+          <div class="guide-card-body">
+            <h3>Alleppey Houseboat Booking Guide — Written by Me</h3>
+            <p>My personal guide to booking a Kerala houseboat: types, realistic pricing, seasonal advice, and insider tips from someone who grew up on these canals. No filler.</p>
+            <span class="guide-read-link">Read the guide →</span>
+          </div>
+        </a>
+
+        <a href="https://www.backwaterholidays.in/blog" class="guide-card reveal reveal-delay-1" rel="noopener" target="_blank" aria-label="Kerala Backwater Blog">
+          <div class="guide-card-top">
+            <div class="guide-number">04</div>
             <div class="guide-topic">All guides</div>
           </div>
           <div class="guide-card-body">
